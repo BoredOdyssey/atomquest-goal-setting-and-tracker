@@ -1,5 +1,5 @@
 # atomquest-goal-setting-and-tracker
-# ⚛ AtomQuest – Goal Setting & Tracking Portal
+# AtomQuest – Goal Setting & Tracking Portal
 
 AtomQuest is a lightweight, browser-based Goal Setting & Performance Tracking Portal built for Hackathon 1.0. The application provides employees, managers, and administrators with a complete workflow for goal creation, approvals, quarterly check-ins, analytics, escalation monitoring, and reporting — all without requiring a backend server or database.
 
@@ -7,9 +7,9 @@ The entire system runs as a single HTML file using Vanilla JavaScript, HTML5, CS
 
 ---
 
-# 📌 Features
+#  Features
 
-## 👤 Role-Based Access
+##  Role-Based Access
 
 ### Employee
 
@@ -19,7 +19,7 @@ The entire system runs as a single HTML file using Vanilla JavaScript, HTML5, CS
 * Track progress and scores
 * View dashboards and check-ins
 
-### 👔 Manager
+###  Manager
 
 * Review employee goals
 * Approve or return goals
@@ -27,7 +27,7 @@ The entire system runs as a single HTML file using Vanilla JavaScript, HTML5, CS
 * Monitor team performance
 * Access team dashboards
 
-### 🛡 Admin / HR
+###  Admin / HR
 
 * View organization-wide dashboards
 * Push shared departmental goals
@@ -38,9 +38,9 @@ The entire system runs as a single HTML file using Vanilla JavaScript, HTML5, CS
 
 ---
 
-# 🚀 Core Modules
+#  Core Modules
 
-## 🎯 Goal Management
+##  Goal Management
 
 * Create goals with:
 
@@ -61,7 +61,7 @@ The entire system runs as a single HTML file using Vanilla JavaScript, HTML5, CS
 
 ---
 
-## 📋 Quarterly Check-ins
+##  Quarterly Check-ins
 
 * Q1 – Q4 check-in windows
 * Achievement logging
@@ -71,7 +71,7 @@ The entire system runs as a single HTML file using Vanilla JavaScript, HTML5, CS
 
 ---
 
-## 📉 Analytics Dashboard
+##  Analytics Dashboard
 
 * Goal status distribution
 * Quarter-on-quarter trends
@@ -82,7 +82,7 @@ The entire system runs as a single HTML file using Vanilla JavaScript, HTML5, CS
 
 ---
 
-## 🚨 Escalation Engine
+##  Escalation Engine
 
 Tracks:
 
@@ -94,7 +94,7 @@ Tracks:
 
 ---
 
-## 📜 Audit Logging
+##  Audit Logging
 
 Every important action is recorded:
 
@@ -108,7 +108,7 @@ Every important action is recorded:
 
 ---
 
-# 🏗 Architecture Overview
+#  Architecture Overview
 
 ## Presentation Layer
 
@@ -144,7 +144,7 @@ Stored keys include:
 
 ---
 
-# 🧰 Technology Stack
+#  Technology Stack
 
 | Component       | Technology                        |
 | --------------- | --------------------------------- |
@@ -158,7 +158,7 @@ Stored keys include:
 
 ---
 
-# 💾 Data Flow
+#  Data Flow
 
 ## Login Flow
 
@@ -182,7 +182,7 @@ Admin runs scan → rules executed → violations detected → escalation log up
 
 ---
 
-# 📊 Scoring Logic
+#  Scoring Logic
 
 The system supports 4 Unit of Measurement (UoM) types:
 
@@ -195,7 +195,7 @@ The system supports 4 Unit of Measurement (UoM) types:
 
 ---
 
-# 🔐 Authentication
+#  Authentication
 
 Demo authentication is implemented using localStorage sessions.
 
@@ -210,7 +210,7 @@ Demo authentication is implemented using localStorage sessions.
 
 ---
 
-# 📂 Project Structure
+#  Project Structure
 
 ```text
 AtomQuest/
@@ -251,7 +251,7 @@ No installation or setup required.
 
 ---
 
-# 🌐 Browser Compatibility
+#  Browser Compatibility
 
 Supported browsers:
 
@@ -262,7 +262,7 @@ Supported browsers:
 
 ---
 
-# 📱 Responsive Design
+#  Responsive Design
 
 The application supports:
 
@@ -272,7 +272,7 @@ The application supports:
 
 ---
 
-# 💡 Key Highlights
+#  Key Highlights
 
 * Completely free to build and host
 * No backend required
@@ -285,7 +285,7 @@ The application supports:
 
 ---
 
-# 🔮 Future Improvements
+#  Future Improvements
 
 Possible enhancements:
 
@@ -300,7 +300,7 @@ Possible enhancements:
 
 ---
 
-# 🧪 Testing Checklist
+# Testing Checklist
 
 ## Employee Testing
 
@@ -325,7 +325,7 @@ Possible enhancements:
 
 ---
 
-# 📌 Business Rules
+#  Business Rules
 
 * Maximum 8 goals per employee
 * Minimum 10% weightage per goal
@@ -337,7 +337,7 @@ Possible enhancements:
 
 ---
 
-# 📈 Analytics Included
+#  Analytics Included
 
 * Goal completion tracking
 * Department performance
@@ -348,7 +348,7 @@ Possible enhancements:
 
 ---
 
-# 🔄 Quarterly Windows
+#  Quarterly Windows
 
 | Quarter | Window             |
 | ------- | ------------------ |
@@ -361,7 +361,7 @@ Goal-setting window opens from May onwards.
 
 ---
 
-# 🛠 Deployment Cost
+# Deployment Cost
 
 | Service      | Cost      |
 | ------------ | --------- |
@@ -375,7 +375,7 @@ Total deployment cost: ₹0
 
 ---
 
-# 👨‍💻 Development Approach
+#  Development Approach
 
 The project follows:
 
@@ -387,13 +387,13 @@ The project follows:
 
 ---
 
-# 📃 License
+#  License
 
 This project is created for educational and hackathon demonstration purposes.
 
 ---
 
-# 🙌 Acknowledgements
+#  Acknowledgements
 
 Built as part of Hackathon 1.0 to demonstrate a zero-cost, fully browser-based employee performance management solution.
 

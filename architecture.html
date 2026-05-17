@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AtomQuest – Architecture Diagram</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',sans-serif;background:#f8fafc;color:#1a1a2e;padding:40px}
+h1{font-size:22px;font-weight:700;color:#0d6e56;margin-bottom:4px}
+.subtitle{font-size:13px;color:#6b7280;margin-bottom:32px}
+.diagram{display:flex;flex-direction:column;gap:0;align-items:center;max-width:900px;margin:0 auto}
+
+/* LAYER */
+.layer{width:100%;position:relative}
+.layer-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#6b7280;margin-bottom:8px;padding-left:4px}
+.layer-row{display:flex;gap:12px;justify-content:center;margin-bottom:0}
+
+/* ARROW */
+.arrow{display:flex;justify-content:center;align-items:center;height:36px;color:#94a3b8;font-size:20px;position:relative}
+.arrow::before{content:'';position:absolute;left:50%;top:0;width:2px;height:100%;background:#e2e8f0;transform:translateX(-50%)}
+.arrow span{background:#f8fafc;padding:0 8px;position:relative;z-index:1;font-size:18px}
+
+/* BOX */
+.box{border-radius:12px;padding:16px 20px;border:1.5px solid;flex:1;min-width:140px;max-width:220px}
+.box .box-icon{font-size:24px;margin-bottom:8px}
+.box .box-title{font-size:13px;font-weight:700;margin-bottom:4px}
+.box .box-sub{font-size:11px;line-height:1.5}
+.box.green{background:#e1f5ee;border-color:#0d6e56;color:#084d3c}
+.box.blue{background:#e6f1fb;border-color:#1a4e8a;color:#0c447c}
+.box.purple{background:#eeedfe;border-color:#3c3489;color:#2a2560}
+.box.amber{background:#faeeda;border-color:#854f0b;color:#6b3e08}
+.box.gray{background:#f1f5f9;border-color:#94a3b8;color:#334155}
+.box.red{background:#fcebeb;border-color:#a32d2d;color:#7f1f1f}
+
+/* WIDE BOX */
+.wide-box{border-radius:12px;padding:16px 24px;border:1.5px solid;width:100%}
+.wide-box .box-title{font-size:14px;font-weight:700;margin-bottom:8px}
+.wide-box .features{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.wide-box .tag{font-size:11px;padding:3px 10px;border-radius:20px;font-weight:500;background:rgba(255,255,255,0.6);border:1px solid rgba(0,0,0,0.1)}
+
+/* CONNECTOR LINE between boxes */
+.connector{display:flex;align-items:center;gap:0;margin-bottom:4px}
+.connector-line{flex:1;height:2px;background:#e2e8f0}
+.connector-arrow{color:#94a3b8;font-size:14px}
+
+/* TABLE */
+.spec-table{width:100%;max-width:900px;margin:32px auto 0;border-collapse:collapse;font-size:13px}
+.spec-table th{background:#1a4e8a;color:#fff;padding:10px 14px;text-align:left;font-weight:600}
+.spec-table td{padding:9px 14px;border-bottom:1px solid #e2e8f0;vertical-align:top}
+.spec-table tr:nth-child(even) td{background:#f8fafc}
+.spec-table td:first-child{font-weight:600;color:#0d6e56;width:200px}
+
+.section-title{font-size:16px;font-weight:700;margin:32px 0 12px;color:#1a1a2e;max-width:900px;width:100%}
+.note{max-width:900px;background:#e1f5ee;border:1px solid #5dcaa5;border-radius:8px;padding:12px 16px;font-size:12px;color:#084d3c;margin:24px auto 0}
+</style>
+</head>
+<body>
+
+<div style="max-width:900px;margin:0 auto">
+  <h1>⚛ AtomQuest — Architecture Diagram</h1>
+  <p class="subtitle">Hackathon 1.0 · In-House Goal Setting & Tracking Portal · Technology & Hosting Overview</p>
+</div>
+
+<div class="diagram">
+
+  <!-- USERS -->
+  <div class="layer">
+    <div class="layer-label">👤 Users / Roles</div>
+    <div class="layer-row">
+      <div class="box blue"><div class="box-icon">👤</div><div class="box-title">Employee</div><div class="box-sub">Creates goals · Logs achievements · Views check-ins</div></div>
+      <div class="box green"><div class="box-icon">👔</div><div class="box-title">Manager (L1)</div><div class="box-sub">Approves goals · Conducts check-ins · Views team</div></div>
+      <div class="box purple"><div class="box-icon">🛡</div><div class="box-title">Admin / HR</div><div class="box-sub">Pushes KPIs · Monitors escalations · Views reports</div></div>
+    </div>
+  </div>
+
+  <div class="arrow"><span>↓</span></div>
+
+  <!-- BROWSER -->
+  <div class="layer">
+    <div class="layer-label">🌐 Presentation Layer</div>
+    <div class="wide-box" style="background:#e6f1fb;border-color:#1a4e8a;color:#0c447c">
+      <div class="box-title">Web Browser (Chrome / Firefox / Edge / Safari)</div>
+      <div style="font-size:12px;margin-bottom:8px">Single-page application — all rendering happens client-side. No page reloads. Works offline after first load.</div>
+      <div class="features">
+        <span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">Vanilla JavaScript (ES6+)</span>
+        <span class="tag">Canvas API (Charts)</span><span class="tag">Responsive Layout</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow"><span>↓</span></div>
+
+  <!-- APP LOGIC -->
+  <div class="layer">
+    <div class="layer-label">⚙ Application Logic Layer (Client-side JS)</div>
+    <div class="layer-row">
+      <div class="box green"><div class="box-icon">🎯</div><div class="box-title">Goal Module</div><div class="box-sub">Create · Edit · Submit · Approve · Lock · Unlock · Shared KPIs</div></div>
+      <div class="box blue"><div class="box-icon">📋</div><div class="box-title">Check-in Module</div><div class="box-sub">Q1–Q4 windows · Achievement logging · Score calculation</div></div>
+      <div class="box amber"><div class="box-icon">🚨</div><div class="box-title">Escalation Module</div><div class="box-sub">Rule-based scan · 3-tier escalation chain · Log</div></div>
+      <div class="box purple"><div class="box-icon">📉</div><div class="box-title">Analytics Module</div><div class="box-sub">QoQ trends · Heatmaps · Donut/Bar/Line charts</div></div>
+    </div>
+  </div>
+
+  <div class="arrow"><span>↓</span></div>
+
+  <!-- BUSINESS RULES -->
+  <div class="layer">
+    <div class="layer-label">📐 Business Rules Engine (Pure JS)</div>
+    <div class="wide-box" style="background:#faeeda;border-color:#854f0b;color:#6b3e08">
+      <div class="box-title">Validation & Enforcement</div>
+      <div class="features">
+        <span class="tag">Weightage = 100%</span>
+        <span class="tag">Min 10% per goal</span>
+        <span class="tag">Max 8 goals</span>
+        <span class="tag">4 UoM Formulas</span>
+        <span class="tag">Quarterly Windows</span>
+        <span class="tag">Goal Locking</span>
+        <span class="tag">Role-based Access</span>
+        <span class="tag">Audit Trail</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow"><span>↓</span></div>
+
+  <!-- STORAGE -->
+  <div class="layer">
+    <div class="layer-label">💾 Data Layer</div>
+    <div class="layer-row">
+      <div class="box gray" style="max-width:400px;flex:2">
+        <div class="box-icon">🗄</div>
+        <div class="box-title">localStorage (Browser)</div>
+        <div class="box-sub">
+          JSON key-value store · Persists across sessions · No server needed<br><br>
+          <strong>Keys:</strong> aq_users · aq_goals · aq_achievements · aq_checkins · aq_audit · aq_session · aq_next_id · aq_esclog
+        </div>
+      </div>
+      <div class="box green" style="max-width:200px">
+        <div class="box-icon">📁</div>
+        <div class="box-title">CSV Export</div>
+        <div class="box-sub">Achievement report exported as downloadable .csv via Blob API</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow"><span>↓</span></div>
+
+  <!-- HOSTING -->
+  <div class="layer">
+    <div class="layer-label">🚀 Hosting / Deployment</div>
+    <div class="layer-row">
+      <div class="box green"><div class="box-icon">💻</div><div class="box-title">Local</div><div class="box-sub">Open atomquest.html in any browser. Zero setup. Works offline.</div></div>
+      <div class="box blue"><div class="box-icon">⚡</div><div class="box-title">GitHub Pages</div><div class="box-sub">Free static hosting. Push to repo → live URL in 60 seconds.</div></div>
+      <div class="box purple"><div class="box-icon">🌍</div><div class="box-title">Netlify / Vercel</div><div class="box-sub">Free tier. Drag & drop deploy. Custom domain support.</div></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- SPEC TABLE -->
+<div style="max-width:900px;margin:0 auto">
+  <div class="section-title">Technology Stack</div>
+  <table class="spec-table">
+    <thead><tr><th>Component</th><th>Technology</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>Frontend Framework</td><td>Vanilla HTML + CSS + JavaScript</td><td>Zero dependencies, zero cost, runs in any browser, no build step</td></tr>
+      <tr><td>Charts / Visualizations</td><td>HTML5 Canvas API</td><td>Built into every browser — no library needed</td></tr>
+      <tr><td>Database</td><td>localStorage (browser-native)</td><td>Free, persistent, no server, instant reads/writes</td></tr>
+      <tr><td>Authentication</td><td>Session object in localStorage</td><td>Role-based access without a backend</td></tr>
+      <tr><td>Hosting</td><td>GitHub Pages / Netlify (free tier)</td><td>Static file hosting — completely free, globally CDN'd</td></tr>
+      <tr><td>Export</td><td>Browser Blob API → CSV download</td><td>No server-side processing needed</td></tr>
+      <tr><td>Version Control</td><td>Git + GitHub</td><td>Free, standard, meets submission requirements</td></tr>
+    </tbody>
+  </table>
+
+  <div class="section-title">Data Flow</div>
+  <table class="spec-table">
+    <thead><tr><th>Action</th><th>Flow</th></tr></thead>
+    <tbody>
+      <tr><td>Login</td><td>User enters credentials → JS checks localStorage aq_users → sets aq_session → renders role-specific UI</td></tr>
+      <tr><td>Create Goal</td><td>Employee fills form → JS validates (weight, count, UoM) → writes to aq_goals → logs to aq_audit</td></tr>
+      <tr><td>Approve Goal</td><td>Manager clicks Approve → JS updates goal status + locked=true → saves to aq_goals → audit log entry</td></tr>
+      <tr><td>Log Achievement</td><td>Employee enters actual → JS calculates score via UoM formula → writes to aq_achievements</td></tr>
+      <tr><td>Escalation Scan</td><td>Admin clicks Scan → JS evaluates rules against aq_goals/aq_checkins → renders issues → logs to aq_esclog</td></tr>
+      <tr><td>Analytics</td><td>Admin views Analytics → JS aggregates aq_goals + aq_achievements + aq_checkins → renders Canvas charts</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note">
+    💡 <strong>Cost:</strong> This solution costs ₹0 to build and ₹0 to host. All technologies used (HTML, CSS, JavaScript, localStorage, GitHub Pages) are completely free and open. The single-file architecture (atomquest.html) means the entire portal is one file — easy to share, version, and demo.
+  </div>
+
+  <div style="margin-top:24px;font-size:12px;color:#94a3b8;text-align:center;padding-bottom:20px">
+    AtomQuest Hackathon 1.0 · Demo credentials: admin/admin123 · manager1/manager123 · emp1/emp123 · emp2/emp123
+  </div>
+</div>
+
+</body>
+</html>

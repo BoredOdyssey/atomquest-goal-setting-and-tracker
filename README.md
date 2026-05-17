@@ -222,7 +222,7 @@ AtomQuest/
 
 ---
 
-# ▶ How to Run
+#  How to Run
 
 ## Option 1 — Run Locally
 
@@ -399,7 +399,7 @@ Built as part of Hackathon 1.0 to demonstrate a zero-cost, fully browser-based e
 
 ---
 
-# ⚛ AtomQuest
+#  AtomQuest
 
 A lightweight goal-setting and tracking portal built entirely with browser-native technologies.
 
